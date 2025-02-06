@@ -12,12 +12,12 @@ Installation Guide:
 
 1. Clone the repository:
     ``` bash
-    git clone https://github.com/username/repository-name.git
+    git clone https://github.com/TheWiki2306/fly_logistics.git
     ```
 
 2. Navigate into the project directory:
     ```bash
-    cd repository-name
+    cd fly_logistics
     ```
 
 3. Install dependencies:
@@ -29,10 +29,12 @@ Installation Guide:
     ```bash
     yarn install
     ```
+4. For VS CODE
+   ```
+   code .
+   ```
 
-## Usage
-
-Describe how to use your project, including examples and code snippets.
+Usage
 
 ```bash
-npm start
+npm run dev
