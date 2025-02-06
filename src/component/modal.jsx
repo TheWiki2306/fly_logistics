@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
-
+import { useFormContext } from "../context/formContext";
 
 const SuccessModal = ({ isVisible, onClose }) => {
+
+  const { pricing, distance } = useFormContext();
+
     if (!isVisible) return null;
   
     return (
@@ -9,7 +12,10 @@ const SuccessModal = ({ isVisible, onClose }) => {
         <div className="bg-white p-8 rounded-2xl w-11/12 max-w-lg text-center">
           <h2 className="text-2xl font-bold text-green-600 mb-4">Success</h2>
           <p className="text-gray-600 mb-6">
-            Price...
+            Price: {pricing}
+          </p>
+          <p className="text-gray-600 mb-6">
+            Distance: {distance}
           </p>
           <button
             onClick={onClose}

@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { pricingSchema } from '../booking/components/schema';
@@ -14,6 +15,8 @@ export const FormProvider = ({ children }) => {
   });
   const [errors, setErrors] = useState({});
   const [isModalVisible, setModalVisible] = useState(false);
+  const [pricing, setPricing] = useState(null);
+  const [distance, setDistance] = useState(null);
 
 
   const handleInputChange = (event) => {
@@ -29,10 +32,10 @@ export const FormProvider = ({ children }) => {
     e.preventDefault();
 
     try {
-      await pricingSchema.validate(formData, { abortEarly: false }); // 'abortEarly: false' ensures all validation errors are captured
+      await pricingSchema.validate(formData, { abortEarly: false }); 
       setErrors({}); 
 
-      const response = await fetch('/api/calculatePricing', {
+      const response = await fetch(' http://localhost:8080/api/calculateprice', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -44,22 +47,27 @@ export const FormProvider = ({ children }) => {
 
       if (response.ok) {
         console.log(data);
-
+        setModalVisible(true)
+        setPricing(data.price);
+        setDistance(data.distance)
       } else {
         console.error(data.error);
       }
     } catch (validationErrors) {
-      const newErrors = validationErrors.inner.reduce((acc, error) => {
-        acc[error.path] = error.message;
-        return acc;
-      }, {});
-      setErrors(newErrors);
+        if (validationErrors.inner && Array.isArray(validationErrors.inner)) {
+            const newErrors = validationErrors.inner.reduce((acc, error) => {
+              acc[error.path] = error.message;
+              return acc;
+            }, {});
+            setErrors(newErrors);
+          }
+          
     }
   };
 
   return (
     <FormContext.Provider
-      value={{ formData, setFormData, errors, setErrors, handleInputChange, handleSubmit, isModalVisible, setModalVisible }}
+      value={{ formData, setFormData, errors, setErrors, handleInputChange, handleSubmit, isModalVisible, setModalVisible, pricing, distance}}
     >
       {children}
     </FormContext.Provider>

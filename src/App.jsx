@@ -64,7 +64,7 @@ function AppContent() {
             >
               Logistics
             </motion.p>
-          </motion.div>
+          </motion.div> 
         )}
       </AnimatePresence>
 

@@ -1,9 +1,11 @@
 import { useFormContext } from '../../context/formContext';
+import SuccessModal from '../../component/modal';
 
 const Form = () => {
 
-  const { formData, errors, handleInputChange, handleSubmit } = useFormContext()
+  const { formData, errors, handleInputChange, handleSubmit, isModalVisible, setModalVisible } = useFormContext()
  
+
 
   return (
     <section className='bg-gray-600 p-8  xl:w-custom1 lg:w-custom1 md:w-custom2 sm:w-custom3 rounded-2xl'>
@@ -84,6 +86,8 @@ const Form = () => {
           <button type="submit" className=" px-24 text-white bg-gray-400 pt-2 pb-3 rounded-xl border-0 transition-all duration-300 hover:bg-gray-500 hover:scale-105">Submit</button>
         </div>
       </form>
+
+      <SuccessModal isVisible={isModalVisible} onClose={() => {setModalVisible(false)}}/>
     </section>
 
   );
