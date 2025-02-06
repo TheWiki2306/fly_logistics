@@ -1,8 +1,38 @@
-# React + Vite
+FRONTEND IJMPLEMENTATION OF THE APPLICATION.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a multi-step booking form for users to schedule cargo shipments. Here I Implemented input validation, dynamic pricing updates, and also ensured the design is
+responsive across devices. 
 
-Currently, two official plugins are available:
+Features include:
+- Input Validation
+- Dynamic Pricing Update
+- Distance between the origin location and the destination of item,
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Installation Guide:
+
+1. Clone the repository:
+    ``` bash
+    git clone https://github.com/username/repository-name.git
+    ```
+
+2. Navigate into the project directory:
+    ```bash
+    cd repository-name
+    ```
+
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+    Or, for Yarn:
+    ```bash
+    yarn install
+    ```
+
+## Usage
+
+Describe how to use your project, including examples and code snippets.
+
+```bash
+npm start
