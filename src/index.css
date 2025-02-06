@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+
+@theme{
+    --color-primary: #C7EA46;
+    --color-secondary: #e0fbfc;
+    /* --color-background: #F5F5F5; */
+
+    --width-custom1: 40%;
+    --width-custom2: 60%;
+    --width-custom3: 80%
+
+    /* --height-custom: 100vh; */
+
+    --text-head: 2.5rem;
+    --text-sub: 1.2rem;
+    --text-normal: 1rem;
+    --text-normal-variant: 0.8rem;   
+    --gap-custom1: 15rem;
+
+    
+}
